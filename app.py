@@ -56,7 +56,7 @@ def main():
 
         # Download processed data as Excel file
         excel_buffer = io.BytesIO()
-        df_processed.to_excel(excel_buffer, index=False, header=True, encoding='utf-8-sig')
+        df_processed.to_excel(excel_buffer, index=False, header=True)
         excel_buffer.seek(0)
         b64 = base64.b64encode(excel_buffer.read()).decode()
         href = f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="processed_data.xlsx">Download Processed Data</a>'
