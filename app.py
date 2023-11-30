@@ -7,15 +7,15 @@ import openpyxl
 def process_algorithm_1(df):
     # Your processing logic for Algorithm 1
     # For example, you can add a new column 'Processed_Algorithm_1'
-    df['Processed_Algorithm_1'] = df['Column1'] * 2
-    df['extra'] = df['Processed_Algorithm_1'] * 3  # Adding 'extra' column
+    #df['Processed_Algorithm_1'] = df['Column1'] * 2
+    #df['extra'] = df['Processed_Algorithm_1'] * 3  # Adding 'extra' column
     return df
 
 # Function to process data with Algorithm 2
 def process_algorithm_2(df):
     # Your processing logic for Algorithm 2
     # For example, you can add a new column 'Processed_Algorithm_2'
-    df['Processed_Algorithm_2'] = df['Column1'] + df['Column2']
+    #df['Processed_Algorithm_2'] = df['Column1'] + df['Column2']
     df['extra'] = df['Processed_Algorithm_2'] + 5  # Adding 'extra' column
     return df
 
