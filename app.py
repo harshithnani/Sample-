@@ -54,8 +54,10 @@ def main():
         st.write(df_processed)
 
         # Download processed data as Excel file
-        csv_data = df_processed.to_excel(index=False, header=True, encoding='utf-8-sig')
-        b64 = base64.b64encode(csv_data.encode()).decode()
+        excel_buffer = io.BytesIO()
+        df_processed.to_excel(excel_buffer, index=False, header=True, encoding='utf-8-sig')
+        excel_buffer.seek(0)
+        b64 = base64.b64encode(excel_buffer.read()).decode()
         href = f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="processed_data.xlsx">Download Processed Data</a>'
         st.markdown(href, unsafe_allow_html=True)
 
