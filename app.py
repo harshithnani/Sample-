@@ -17,7 +17,7 @@ def process_algorithm_2(df):
     # Your processing logic for Algorithm 2
     # For example, you can add a new column 'Processed_Algorithm_2'
     #df['Processed_Algorithm_2'] = df['Column1'] + df['Column2']
-    df['extra'] = df['Processed_Algorithm_2'] + 5  # Adding 'extra' column
+    df['Testing'] = '' # Adding 'extra' column
     return df
 
 # Function to handle parse errors and invalid file formats
