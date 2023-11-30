@@ -6,6 +6,7 @@ import io
 
 # Function to process data with Algorithm 1
 def process_algorithm_1(df):
+    st
     # Your processing logic for Algorithm 1
     # For example, you can add a new column 'Processed_Algorithm_1'
     #df['Processed_Algorithm_1'] = df['Column1'] * 2
@@ -29,7 +30,7 @@ def main():
     st.set_page_config(page_title="Excel Processing App", page_icon="📊")
 
     # Sidebar for selecting processing algorithm
-    algorithm_choice = st.sidebar.radio("Select Processing Algorithm", ["Algorithm 1", "Algorithm 2"])
+    algorithm_choice = st.sidebar.radio("Select Processing Algorithm", ["Algorithm without considering Action Items", "Algorithm with considering Action Items"])
 
     # Upload Excel file
     uploaded_file = st.file_uploader("Upload an Excel file", type=["xlsx", "xls"])
@@ -59,7 +60,7 @@ def main():
         df_processed.to_excel(excel_buffer, index=False, header=True)
         excel_buffer.seek(0)
         b64 = base64.b64encode(excel_buffer.read()).decode()
-        href = f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="processed_data.xlsx">Download Processed Data</a>'
+        href = f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="processed_data.xlsx">Click here to download Processed Data</a>'
         st.markdown(href, unsafe_allow_html=True)
 
 # Run the app
